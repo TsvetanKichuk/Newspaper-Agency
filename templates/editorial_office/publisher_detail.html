@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>
+    Username: {{ publisher.username }}
+    <a href="{% url 'editorial_office:publisher-delete' pk=publisher.id %}" class="btn btn-danger link-to-page">
+      Delete
+    </a>
+
+    <a href="{% url 'editorial_office:publisher-update' pk=publisher.id %}" class="btn btn-secondary link-to-page">
+      Update license number
+    </a>
+  </h1>
+
+  <p><strong>First name:</strong> {{ publisher.first_name }}</p>
+  <p><strong>Last name:</strong> {{ publisher.last_name }}</p>
+  <p><strong>Experience:</strong> {{ publisher.year_of_experience }}</p>
+  <p><strong>Is staff:</strong> {{ publisher.is_staff }}</p>
+
+  <div class="ml-3">
+    <h4>Newspapers</h4>
+
+    {% for newspaper in publisher.newspapers.all %}
+        <hr>
+        <p><strong>Title:</strong> {{ newspaper.title }}</p>
+        <p><strong>Topic:</strong> {{ newspaper.topic.name }}</p>
+        <p class="text-muted"><strong>Id:</strong> {{newspaper.id}}</p>
+
+    {% empty %}
+      <p>No newspapers!</p>
+    {% endfor %}
+  </div>
+{% endblock %}
