@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+    <h1>
+      Publisher List
+      <a href="{% url 'editorial_office:publisher-create' %}" class="btn btn-primary link-to-page">
+        Create
+      </a>
+    </h1>
+     <form method="get" action="" class="form-inline">
+    {{ search_form|crispy }}
+    <input class="btn btn-secondary" type="submit" value="Search"/>
+  </form>
+
+    {% if publisher_list %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Years of experience</th>
+      </tr>
+    {% for publisher in publisher_list %}
+      <tr>
+        <td>{{ publisher.id }}</td>
+        <td><a href="{{ publisher.get_absolute_url }}">{{ publisher.username }} {% if user == publisher %} (Me){% endif %}</a></td>
+        <td>{{ publisher.first_name }}</td>
+        <td>{{ publisher.last_name }}</td>
+        <td>{{ publisher.years_of_experience }}</td>
+      </tr>
+    {% endfor %}
+
+    </table>
+    {% else %}
+      <p>There are no publishers in the agency.</p>
+    {% endif %}
+{% endblock %}
