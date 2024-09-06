@@ -3,8 +3,8 @@
 
 {% block content %}
     <h1>
-      Publisher List
-      <a href="{% url 'editorial_office:publisher-create' %}" class="btn btn-primary link-to-page">
+      publishers List
+      <a href="{% url 'editorial_office:publishers-create' %}" class="btn btn-primary link-to-page">
         Create
       </a>
     </h1>
@@ -13,7 +13,7 @@
     <input class="btn btn-secondary" type="submit" value="Search"/>
   </form>
 
-    {% if publisher_list %}
+    {% if publishers_list %}
     <table class="table">
       <tr>
         <th>ID</th>
@@ -22,13 +22,13 @@
         <th>Last name</th>
         <th>Years of experience</th>
       </tr>
-    {% for publisher in publisher_list %}
+    {% for publishers in publishers_list %}
       <tr>
-        <td>{{ publisher.id }}</td>
-        <td><a href="{{ publisher.get_absolute_url }}">{{ publisher.username }} {% if user == publisher %} (Me){% endif %}</a></td>
-        <td>{{ publisher.first_name }}</td>
-        <td>{{ publisher.last_name }}</td>
-        <td>{{ publisher.years_of_experience }}</td>
+        <td>{{ publishers.id }}</td>
+        <td><a href="{{ publishers.get_absolute_url }}">{{ publishers.username }} {% if user == publishers %} (Me){% endif %}</a></td>
+        <td>{{ publishers.first_name }}</td>
+        <td>{{ publishers.last_name }}</td>
+        <td>{{ publishers.years_of_experience }}</td>
       </tr>
     {% endfor %}
 
