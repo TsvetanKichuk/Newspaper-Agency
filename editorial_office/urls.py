@@ -10,7 +10,7 @@ from editorial_office.views import (
     RedactorListView,
     RedactorDetailView,
     RedactorCreateView,
-    RedactorLicenseUpdateView,
+    RedactorUpdateView,
     RedactorDeleteView,
     TopicListView,
     TopicCreateView,
@@ -49,26 +49,26 @@ urlpatterns = [
     path(
         "newspapers/<int:pk>/toggle-assign/",
         toggle_assign_to_newspaper,
-        name="toggle-car-assign",
+        name="toggle-newspaper-assign",
     ),
-    path("publishers/", RedactorListView.as_view(), name="publisher-list"),
+    path("redactor/", RedactorListView.as_view(), name="redactor-list"),
     path(
-        "publishers/<int:pk>/", RedactorDetailView.as_view(), name="publisher-detail"
+        "redactor/<int:pk>/", RedactorDetailView.as_view(), name="redactor-detail"
     ),
-    path("publishers/", RedactorListView.as_view(), name="publisher-list"),
+    path("redactor/", RedactorListView.as_view(), name="redactor-list"),
     path(
-        "publishers/<int:pk>/", RedactorDetailView.as_view(), name="publisher-detail"
+        "redactor/<int:pk>/", RedactorDetailView.as_view(), name="redactor-detail"
     ),
-    path("publishers/create/", RedactorCreateView.as_view(), name="publisher-create"),
+    path("redactor/create/", RedactorCreateView.as_view(), name="redactor-create"),
     path(
-        "publishers/<int:pk>/update/",
-        RedactorLicenseUpdateView.as_view(),
-        name="publisher-update",
+        "redactor/<int:pk>/update/",
+        RedactorUpdateView.as_view(),
+        name="redactor-update",
     ),
     path(
-        "publisher/<int:pk>/delete/",
+        "redactor/<int:pk>/delete/",
         RedactorDeleteView.as_view(),
-        name="publisher-delete",
+        name="redactor-delete",
     ),
 ]
 

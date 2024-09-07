@@ -2,22 +2,22 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <h1>
-    Car list
+  <h2>
+    Newspaper list
     <a href="{% url 'editorial_office:newspaper-create' %}" class="btn btn-primary link-to-page">
       Create
     </a>
-  </h1>
+  </h2>
     <form method="get" action="" class="form-inline">
     {{ search_form|crispy }}
     <input class="btn btn-secondary" type="submit" value="Search"/>
   </form>
-  {% if car_list %}
+  {% if newspaper_list %}
     <ul>
-      {% for car in car_list %}
+      {% for newspaper in newspaper_list %}
         <li>
-          <a href="{% url "editorial_office:newspaper-detail" pk=newspaper.id %} ">{{ newspaper.id }}</a>
-          {{ newspaper.title }} ({{ newspaper.topic.name }})
+          <a href="{% url "editorial_office:newspaper-detail" pk=newspaper.id %} ">{{ newspaper.title }}</a>
+          (topic name: "{{ newspaper.topic.name }}")
         </li>
       {% endfor %}
     </ul>
