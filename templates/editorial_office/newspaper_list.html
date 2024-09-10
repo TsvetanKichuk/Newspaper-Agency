@@ -33,11 +33,15 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
         </ul>
       </div>
     </div>
@@ -64,6 +68,7 @@
               {{ search_form|crispy }}
               <input class="btn btn-secondary" type="submit" value="Search"/>
             </form>
+            <hr>
             {% if newspaper_list %}
               <ul>
                 {% for newspaper in newspaper_list %}
@@ -76,16 +81,17 @@
             {% else %}
               <p>There are no newspapers in agency</p>
             {% endif %}
-
+            <hr>
             {% block pagination %}
               {% include "includes/pagination.html" %}
             {% endblock %}
           </ul>
         </div>
       </div>
-        <a href="{% url 'editorial_office:newspaper-create' %}" class="btn btn-primary">
-          Create
-        </a>
+      <hr>
+      <a href="{% url 'editorial_office:newspaper-create' %}" class="btn btn-primary">
+        Create
+      </a>
       {#      <img class="img-fluid" src="../../static/dist/assets/img/ipad.png" alt="..."/>#}
     </div>
   </section>
@@ -105,110 +111,4 @@
   <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
   </body>
   </html>
-
-  {#  old code ---------------------------------------------------------------------------------------------#}
-  {#  <html lang="en">#}
-  {#  <head>#}
-  {#    <meta charset="utf-8"/>#}
-  {#    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>#}
-  {#    <meta name="description" content=""/>#}
-  {#    <meta name="author" content=""/>#}
-  {#    <title>Newspaper Agency</title>#}
-  {#    <link rel="icon" type="image/x-icon" href="../../static/dist/assets/favicon.ico"/>#}
-  {#    <!-- Font Awesome icons (free version)-->#}
-  {#    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>#}
-  {#    <!-- Google fonts-->#}
-  {#    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>#}
-  {#    <link#}
-  {#        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"#}
-  {#        rel="stylesheet"/>#}
-  {#    <!-- Core theme CSS (includes Bootstrap)-->#}
-  {#    <link href="../../static/dist/css/styles.css" rel="stylesheet"/>#}
-  {#  </head>#}
-  {#  <body id="page-top">#}
-  {#  <!-- Navigation-->#}
-  {#  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">#}
-  {#    <div class="container px-4 px-lg-5">#}
-  {#      <div class="collapse navbar-collapse" id="navbarResponsive">#}
-  {#        <ul class="navbar-nav ms-auto">#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:index' %}">Home</a></li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>#}
-  {#          </li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:topic-list' %}">Topics</a></li>#}
-  {#        </ul>#}
-  {#      </div>#}
-  {#    </div>#}
-  {#  </nav>#}
-  {#  <!-- Masthead-->#}
-  {#  <header class="masthead">#}
-  {#    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">#}
-  {#      <div class="d-flex justify-content-center">#}
-  {#        <div class="text-center">#}
-  {#          <h1 class="mx-auto my-0 text-uppercase">Newspapers</h1>#}
-  {#          <h2 class="text-white-50 mx-auto mt-2 mb-5">#}
-  {#            <form method="get" action="" class="form-inline">#}
-  {#              {{ search_form|crispy }}#}
-  {#              <input class="btn btn-secondary" type="submit" value="Search"/>#}
-  {#            </form>#}
-  {#            <br>#}
-  {#            <br>#}
-  {#            {% if newspaper_list %}#}
-  {#              <ul>#}
-  {#                {% for newspaper in newspaper_list %}#}
-  {#                  <li>#}
-  {#                    <a href="{% url "editorial_office:newspaper-detail" pk=newspaper.id %} ">{{ newspaper.title }}</a>#}
-  {#                    ("{{ newspaper.topic.name }}")#}
-  {#                  </li>#}
-  {#                {% endfor %}#}
-  {#              </ul>#}
-  {#            {% else %}#}
-  {#              <p>There are no newspapers in agency</p>#}
-  {#            {% endif %}#}
-  {#            <h6>#}
-  {#              <a href="{% url 'editorial_office:newspaper-create' %}" class="btn btn-primary">#}
-  {#                Create#}
-  {#              </a>#}
-  {#            </h6>#}
-  {#  </header>#}
-  {#  <!-- About-->#}
-  {##}
-  {#  <!-- Footer-->#}
-  {#  <footer class="footer bg-black small text-center text-white-50">#}
-  {#    <div class="container px-4 px-lg-5">Newspaper agency 2024</div>#}
-  {#  </footer>#}
-  {#  <!-- Bootstrap core JS-->#}
-  {#  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>#}
-  {#  <!-- Core theme JS-->#}
-  {#  <script src="../../static/dist/js/scripts.js"></script>#}
-  {#  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->#}
-  {#  <!-- * *                               SB Forms JS                               * *-->#}
-  {#  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->#}
-  {#  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->#}
-  {#  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>#}
-  {#  </body>#}
-  {#  </html>#}
-  {#  old code--------- - - - - - - - - - - - - - - - #}
-  {#  <h2>#}
-  {#    Newspaper list#}
-  {#    <a href="{% url 'editorial_office:newspaper-create' %}" class="btn btn-primary link-to-page">#}
-  {#      Create#}
-  {#    </a>#}
-  {#  </h2>#}
-  {#  <form method="get" action="" class="form-inline">#}
-  {#    {{ search_form|crispy }}#}
-  {#    <input class="btn btn-secondary" type="submit" value="Search"/>#}
-  {#  </form>#}
-  {#  {% if newspaper_list %}#}
-  {#    <ul>#}
-  {#      {% for newspaper in newspaper_list %}#}
-  {#        <li>#}
-  {#          <a href="{% url "editorial_office:newspaper-detail" pk=newspaper.id %} ">{{ newspaper.title }}</a>#}
-  {#          (topic name: "{{ newspaper.topic.name }}")#}
-  {#        </li>#}
-  {#      {% endfor %}#}
-  {#    </ul>#}
-  {#  {% else %}#}
-  {#    <p>There are no newspapers in agency</p>#}
-  {#  {% endif %}#}
 {% endblock %}

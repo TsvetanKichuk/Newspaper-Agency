@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic import TemplateView
 
 from editorial_office.views import (
     index,
@@ -70,6 +71,7 @@ urlpatterns = [
         RedactorDeleteView.as_view(),
         name="redactor-delete",
     ),
+    path("", TemplateView.as_view(template_name="editorial_office/index.html"), name="index"),
 ]
 
 app_name = "editorial_office"

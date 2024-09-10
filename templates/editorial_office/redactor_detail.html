@@ -25,19 +25,23 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container px-4 px-lg-5">
       <a class="navbar-brand" href="#page-top">Start</a>
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-              aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
+      {#      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"#}
+      {#              data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"#}
+      {#              aria-label="Toggle navigation">#}
+      {#        Menu#}
+      {#        <i class="fas fa-bars"></i>#}
+      {#      </button>#}
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+                                  href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
         </ul>
       </div>
     </div>
@@ -71,8 +75,6 @@
                   href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}
               </a>({{ newspaper.topic.name }})
               </li>
-              {#              <li style="font-size: 16px;"><strong>Topic:</strong> </li>#}
-              {#              <li style="font-size: 16px;"><strong>Id:</strong> {{ newspaper.id }}</li>#}
             {% empty %}
               <br>
               <p>No newspapers!</p>
@@ -81,7 +83,6 @@
             <br>
             <a class="btn btn-primary" href="{% url 'editorial_office:redactor-delete' pk=redactor.id %}">Delete</a>
             <a class="btn btn-danger" href="{% url 'editorial_office:redactor-update' pk=redactor.id %}">Update</a>
-
         </div>
   </section>
 
@@ -100,86 +101,4 @@
   <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
   </body>
   </html>
-
-  {#old code ---------------------------------------------------------------------------------------------------------#}
-  {#  <html lang="en">#}
-  {#  <head>#}
-  {#    <meta charset="utf-8"/>#}
-  {#    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>#}
-  {#    <meta name="description" content=""/>#}
-  {#    <meta name="author" content=""/>#}
-  {#    <title>Newspaper Agency</title>#}
-  {#    <link rel="icon" type="image/x-icon" href="../../static/dist/assets/favicon.ico"/>#}
-  {#    <!-- Font Awesome icons (free version)-->#}
-  {#    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>#}
-  {#    <!-- Google fonts-->#}
-  {#    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>#}
-  {#    <link#}
-  {#        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"#}
-  {#        rel="stylesheet"/>#}
-  {#    <!-- Core theme CSS (includes Bootstrap)-->#}
-  {#    <link href="../../static/dist/css/styles.css" rel="stylesheet"/>#}
-  {#  </head>#}
-  {#  <body id="page-top">#}
-  {#  <!-- Navigation-->#}
-  {#  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">#}
-  {#    <div class="container px-4 px-lg-5">#}
-  {#      <a class="navbar-brand" href="#page-top">Start</a>#}
-  {#      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"#}
-  {#              data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"#}
-  {#              aria-label="Toggle navigation">#}
-  {#        Menu#}
-  {#        <i class="fas fa-bars"></i>#}
-  {#      </button>#}
-  {#      <div class="collapse navbar-collapse" id="navbarResponsive">#}
-  {#        <ul class="navbar-nav ms-auto">#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:index' %}">Home</a></li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>#}
-  {#          </li>#}
-  {#          <li class="nav-item"><a class="nav-link" href="{% url 'editorial_office:topic-list' %}">Topics</a></li>#}
-  {#        </ul>#}
-  {#      </div>#}
-  {#    </div>#}
-  {#  </nav>#}
-  {#  <!-- Masthead-->#}
-  {#  <header class="masthead">#}
-  {#    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">#}
-  {#      <div class="d-flex justify-content-center">#}
-  {#        <div class="text-center">#}
-  {#          <h3 class="mx-auto my-0 text-uppercase">Username: {{ redactor.username }}</h3>#}
-  {#          <h2 class="text-white-50 mx-auto mt-2 mb-5">#}
-  {#            <li><strong>First name:</strong> {{ redactor.first_name }}</li>#}
-  {#            <li><strong>Last name:</strong> {{ redactor.last_name }}</li>#}
-  {#            <li><strong>Experience:</strong> {{ redactor.year_of_experience }}</li>#}
-  {#            <li><strong>Is staff:</strong> {{ redactor.is_staff }}</li>#}
-  {#            <h4 class="mx-auto my-0 text-uppercase">Newspapers</h4>#}
-  {#            <p class="text-black-50 mb-0">{% for newspaper in redactor.newspapers.all %}#}
-  {#              <hr>#}
-  {#              <p><strong class="mx-auto my-0 text-uppercase">Title:</strong><a#}
-  {#                  href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}</a></p>#}
-  {#              <p class="text-muted"><strong>Topic:</strong> {{ newspaper.topic.name }}</p>#}
-  {#              <p class="text-muted"><strong>Id:</strong> {{ newspaper.id }}</p>#}
-  {#            {% empty %}#}
-  {#              <p>No newspapers!</p>#}
-  {#            {% endfor %}#}
-  {#            <a class="btn btn-primary" href="{% url 'editorial_office:redactor-delete' pk=redactor.id %}">Delete</a>#}
-  {#            <a class="btn btn-danger" href="{% url 'editorial_office:redactor-update' pk=redactor.id %}">Update</a>#}
-  {#          </h2>#}
-  {#        </div>#}
-  {#      </div>#}
-  {#    </div>#}
-  {#  </header>#}
-  {#  <!-- About-->#}
-  {#  <section class="about-section text-center" id="about">#}
-  {#    <div class="container px-4 px-lg-5">#}
-  {#      <div class="row gx-4 gx-lg-5 justify-content-center">#}
-  {#      </div>#}
-  {#    </div>#}
-  {#  </section>#}
-  {#  <footer class="footer bg-black small text-center text-white-50">#}
-  {#    <div class="container px-4 px-lg-5">Newspaper agency 2024</div>#}
-  {#  </footer>#}
-  {#  </body>#}
-  {#  </html>#}
 {% endblock %}

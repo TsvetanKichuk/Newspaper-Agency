@@ -178,3 +178,7 @@ def toggle_assign_to_newspaper(request, pk):
     else:
         publisher.newspapers.add(pk)
     return HttpResponseRedirect(reverse_lazy("editorial_office:newspaper-detail", args=[pk]))
+
+
+class LogoutView(generic.TemplateView):
+    pass
