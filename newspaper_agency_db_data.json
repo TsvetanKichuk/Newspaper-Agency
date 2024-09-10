@@ -1,0 +1,154 @@
+[
+{
+    "model": "editorial_office.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Politics"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Crime"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Bussines"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Art"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Trade"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 6,
+    "fields": {
+        "name": "Weather"
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$xaxsLvNumafqh6D4oLY10m$rR0K1mOkKQuJXl6dovFiLzvHidVE7tHRjmCmR3nkgs4=",
+        "last_login": "2024-09-10T14:47:09.194Z",
+        "is_superuser": true,
+        "username": "tsvetan",
+        "first_name": "Tsvetan",
+        "last_name": "Kichuk",
+        "email": "test@test.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-06T17:37:55.143Z",
+        "year_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$kg47BFTmcTdxtdYzo37ce8$5ZAR9yMK6RC6e8FMvJojExIWe8RPV63dGSRpnAiJbRI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "JohnD",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-07T13:29:32.127Z",
+        "year_of_experience": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$4acrVKUjBDSt4Jkz2adHNC$cwQOmXmSNA76J7MOua2aCIL4Y5VcltOCRHwgNO18uig=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "StevenK",
+        "first_name": "Steven",
+        "last_name": "King",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-10T12:50:57.022Z",
+        "year_of_experience": 50,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "\"Unexpected snowfall paralyzes city\"",
+        "content": "Yesterday evening the city was hit by an unexpected snowfall. The snow cover reached 20 centimeters. Due to the icy conditions on the roads, traffic jams for several kilometers formed. Public utilities are working in an intensified mode to clear the streets of snow. Forecasters predict that the snowfall will continue for several more days. City residents are asked to be careful on the roads and, if possible, stay home.",
+        "published_date": "2024-09-06",
+        "topic": 6,
+        "publishers": [
+            1
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "\"The forest as a medicine for the soul\"",
+        "content": "In today's busy world, more and more people are looking for ways to relax and recharge their batteries. And one of the most effective ways is to connect with nature. Walking in the woods, meditating on the shore of a lake, or simply bird watching help us take a break from everyday worries and find harmony with ourselves.",
+        "published_date": "2024-09-07",
+        "topic": 4,
+        "publishers": [
+            2
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 3,
+    "fields": {
+        "title": "\"The Influence of Nature on the Love of Life\"",
+        "content": "Research shows that time spent in nature reduces stress, improves mood, and increases creativity. Phytoncides released by plants have antibacterial properties and purify the air. Sounds of nature, such as birdsong and the sound of the wind, calm the nervous system and promote deep relaxation.",
+        "published_date": "2024-09-07",
+        "topic": 4,
+        "publishers": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 4,
+    "fields": {
+        "title": "\"A Billion Dollar Aroma: The Big Business of a Small Cup\"",
+        "content": "The Rise of Specialty Coffee: A Brew of Innovation\r\nIn recent years, the coffee industry has undergone a remarkable transformation, with the emergence of a new wave of specialty coffee shops. These establishments, often referred to as \"third wave coffee shops,\" are revolutionizing the way we perceive and consume coffee.\r\n\r\nWhat is Specialty Coffee?\r\n\r\nSpecialty coffee is a term used to describe high-quality coffee beans that are sourced from specific regions, roasted to perfection, and brewed with meticulous attention to detail. Unlike mass-produced coffee, specialty coffee prioritizes flavor, aroma, and the unique characteristics of each bean.\r\n\r\nKey Characteristics of Specialty Coffee Shops:\r\n\r\nFocus on Quality: Specialty coffee shops prioritize the sourcing of high-quality coffee beans from sustainable farms.\r\nExpert Baristas: These shops employ skilled baristas who are passionate about coffee and trained in various brewing methods.\r\nSingle-Origin Beans: Many specialty coffee shops offer a variety of single-origin beans, allowing customers to experience the unique flavors of coffee from different regions.\r\nAlternative Brewing Methods: Beyond the traditional drip coffee, specialty coffee shops often offer alternative brewing methods such as pour-over, French press, and Chemex.\r\nEmphasis on Flavor: Specialty coffee shops educate customers about the nuances of flavor profiles and encourage them to appreciate the complexity of coffee.\r\nThe Impact of Specialty Coffee:\r\n\r\nIncreased Consumer Awareness: Specialty coffee shops have played a significant role in educating consumers about the quality and diversity of coffee.\r\nEconomic Growth: The rise of specialty coffee has created new business opportunities and contributed to economic growth in many regions.\r\nCultural Shift: Specialty coffee has become a cultural phenomenon, attracting a growing number of coffee enthusiasts and connoisseurs.\r\nThe Future of Specialty Coffee:",
+        "published_date": "2024-09-10",
+        "topic": 5,
+        "publishers": [
+            2
+        ]
+    }
+}
+]
