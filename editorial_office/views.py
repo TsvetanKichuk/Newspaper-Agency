@@ -41,7 +41,7 @@ class TopicListView(LoginRequiredMixin, generic.ListView):
     model = Topic
     context_object_name = "topic_list"
     template_name = "editorial_office/topic_list.html"
-    paginate_by = 3
+    paginate_by = 5
     queryset = Topic.objects.all()
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -79,7 +79,7 @@ class TopicDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class NewspaperListView(LoginRequiredMixin, generic.ListView):
     model = Newspaper
-    paginate_by = 1
+    paginate_by = 5
     queryset = Newspaper.objects.select_related("topic")
 
     def get_context_data(self, *, object_list=None, **kwargs):
@@ -124,7 +124,7 @@ class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):
 
 class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
-    paginate_by = 1
+    paginate_by = 5
     context_object_name = "redactors_list"
     queryset = Redactor.objects.all().prefetch_related("newspapers__topic")
 
