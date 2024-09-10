@@ -5,10 +5,6 @@ from editorial_office.models import Newspaper, Redactor, Topic
 
 
 class NewspaperForm(forms.ModelForm):
-    topic = forms.ModelMultipleChoiceField(
-        queryset=Topic.objects.all(),
-        widget=forms.CheckboxSelectMultiple,
-    )
     publishers = forms.ModelMultipleChoiceField(
         queryset=Redactor.objects.all(),
         widget=forms.CheckboxSelectMultiple,
