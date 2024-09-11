@@ -26,33 +26,28 @@
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container px-4 px-lg-5">
       {% if user.is_authenticated %}
-        <p class=class="nav-item"><a class="nav-link" style="font-size: 21px"
-                                     href="{{ user.get_absolute_url }}">User: {{ user.get_username }}</a></p>
+
         <form action="{% url 'logout' %}" method="post">
           {% csrf_token %}
-          <button class="btn btn-dark" type="submit">Log Out</button>
+          <button class="btn btn-dark" type="submit">Logout</button>
         </form>
       {% else %}
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">Log In</a>
       {% endif %}
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-              data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-              aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px" href="{% url 'editorial_office:index' %}">Home</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
+          <p class="nav-item"><a class="nav-link" style="font-size: 20px"
+                                 href="{{ user.get_absolute_url }}">User: {{ user.get_username }}</a></p>
         </ul>
       </div>
     </div>
@@ -63,8 +58,7 @@
       <div class="d-flex justify-content-center">
         <div class="text-center">
           <h1 class="mx-auto my-0 text-uppercase">Newspaper agency</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to our publication!</h2>
-          {#          <a class="btn btn-primary" href="{% url 'login'%}?next={{request.path}}">Login</a>#}
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to our editorial office</h2>
         </div>
       </div>
     </div>
@@ -83,7 +77,6 @@
           </ul>
         </div>
       </div>
-      {#      <img class="img-fluid" src="../../static/dist/assets/img/ipad.png" alt="..."/>#}
     </div>
   </section>
   <!-- Projects-->

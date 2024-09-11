@@ -34,14 +34,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px" href="{% url 'editorial_office:index' %}">Home</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
           </li>
-          <li class="nav-item"><a class="nav-link" style="font-size: 19px"
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
                                   href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
         </ul>
       </div>
@@ -53,7 +53,7 @@
       <div class="d-flex justify-content-center">
         <div class="text-center">
           <h1 class="mx-auto my-0 text-uppercase">Publishers</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to our publication!</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">Welcome to our editorial office</h2>
         </div>
       </div>
     </div>
@@ -66,7 +66,7 @@
           <h2 class="text-white mb-4"> Publishers List</h2>
           <form method="get" action="" class="form-inline">
             {{ search_form|crispy }}
-            <input class="btn btn-secondary" type="submit" value="Search"/>
+            <input class="btn btn-outline-light" type="submit" value="Search"/>
           </form>
           <hr>
           {% if redactors_list %}
@@ -80,13 +80,13 @@
               </tr>
               {% for redactors in redactors_list %}
                 <tr>
-                  <td style="color: white">{{ redactors.id }}</td>
-                  <td><a style="font-size: 19px;" href="{{ redactors.get_absolute_url }}">{{ redactors.username }}
+                  <td style="font-size: 21px; color: white">{{ redactors.id }}</td>
+                  <td><a style="font-size: 21px;" href="{{ redactors.get_absolute_url }}">{{ redactors.username }}
                     {% if user == redactors %}
                       (Me){% endif %}</a></td>
-                  <td style="color: white">{{ redactors.first_name }}</td>
-                  <td style="color: white">{{ redactors.last_name }}</td>
-                  <td style="color: white">{{ redactors.year_of_experience }}</td>
+                  <td style="font-size: 21px; color: white">{{ redactors.first_name }}</td>
+                  <td style="font-size: 21px; color: white">{{ redactors.last_name }}</td>
+                  <td style="font-size: 21px; color: white">{{ redactors.year_of_experience }}</td>
                 </tr>
               {% endfor %}
             </table>
