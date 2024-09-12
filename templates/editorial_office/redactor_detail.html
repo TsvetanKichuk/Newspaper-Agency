@@ -66,8 +66,8 @@
             <p class="text-black-50 mb-0">{% for newspaper in redactor.newspapers.all %}
               <hr>
               <li><strong style="font-size: 21px">Title: </strong><a style="font-size: 21px"
-                  href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}
-             ({{ newspaper.topic.name }}) </a>
+                                                                     href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}">{{ newspaper.title }}
+                ({{ newspaper.topic.name }}) </a>
               </li>
             {% empty %}
               <br>
