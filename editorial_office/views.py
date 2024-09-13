@@ -107,14 +107,14 @@ class NewspaperCreateView(LoginRequiredMixin, generic.CreateView):
     model = Newspaper
     form_class = NewspaperForm
     success_url = reverse_lazy("editorial_office:newspaper-list")
-    queryset = Newspaper.objects.all().select_related("topic")
+    queryset = Newspaper.objects.select_related("topic")
 
 
 class NewspaperUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Newspaper
     form_class = NewspaperForm
     success_url = reverse_lazy("editorial_office:newspaper-list")
-    queryset = Newspaper.objects.all().select_related("topic")
+    queryset = Newspaper.objects.select_related("topic")
 
 
 class NewspaperDeleteView(LoginRequiredMixin, generic.DeleteView):
@@ -126,7 +126,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
     model = Redactor
     paginate_by = 5
     context_object_name = "redactors_list"
-    queryset = Redactor.objects.all().prefetch_related("newspapers__topic")
+    queryset = Redactor.objects.prefetch_related("newspapers__topic")
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(RedactorListView, self).get_context_data(**kwargs)
@@ -149,7 +149,7 @@ class RedactorListView(LoginRequiredMixin, generic.ListView):
 
 class RedactorDetailView(LoginRequiredMixin, generic.DetailView):
     model = Redactor
-    queryset = Redactor.objects.all().prefetch_related("newspapers")
+    queryset = Redactor.objects.prefetch_related("newspapers")
 
 
 class RedactorCreateView(LoginRequiredMixin, generic.CreateView):
