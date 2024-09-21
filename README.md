@@ -20,8 +20,8 @@ python manage.py runserver
   <li>Use the following command to load prepared data from fixture to test and debug your code:</li>
     <code>python manage.py loaddata newspaper_agency_db_data.json</code>
   <li>After loading data from fixture you can use following superuser (or create another one by yourself):</li>
-  <li>Login: <code>JohnD</code> </li>
-  <li>Password: <code>456987Aa_</code></li>
+  <li>Login: <code>test_user</code> </li>
+  <li>Password: <code>1234509876Test</code></li>
 </ul>
 
 ## Link to project deployment: 
