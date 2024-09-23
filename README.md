@@ -24,6 +24,9 @@ python manage.py runserver
   <li>Password: <code>456987Aa_</code></li>
 </ul>
 
+## Link to project deployment:
+https://newspaper-agency-x6l8.onrender.com
+
 ## Screenshots
 
 ![Снимок экрана 2024-09-11 201343](https://github.com/user-attachments/assets/d9d8f605-b58f-40a6-a636-e1a5d1888d08)
