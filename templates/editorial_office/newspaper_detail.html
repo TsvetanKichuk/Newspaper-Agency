@@ -23,8 +23,10 @@
   </head>
   <body id="page-top">
   <!-- Navigation-->
+      
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
     <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#page-top">Start</a>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
@@ -65,7 +67,7 @@
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-lg-8">
           <h2 class="text-white-50 mx-auto mt-2 mb-5">
-            <p style="font-size: 21px">Content: {{ newspaper.content }}</p>
+            <p style="font-size: 21px">{{ newspaper.content }}</p>
           </h2>
           <a href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}" class="btn btn-danger">
             Delete

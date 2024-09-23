@@ -2,20 +2,35 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0"
-                                      src="../../static/dist/assets/img/bg-masthead.jpg" alt="..."/>
+  <head>
+    <title></title>
+    <style>
+        body {
+            width: 300px;
+            margin: auto;
+            background-image: url("../../static/dist/assets/img/bg-signup.jpg");
+            background-size: auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #2c3034;
+            border-radius: 25px;
+        }
+    </style>
+  </head>
+  <body>
+  <div class="login-form">
     {% if form.errors %}
       <p>Your username and password didn't match. Please try again.</p>
     {% endif %}
-    <h1>Login</h1>
     {% if next %}
-      <p>Please login to see this page.</p>
+      <h4>Please login</h4>
     {% endif %}
     <form method="post" action="{% url 'login' %}">
       {% csrf_token %}
       {{ form|crispy }}
-      <input type="submit" value="Login" class="btn btn-primary"/>
+      <input type="submit" value="Login" class="btn btn-dark"/>
       <input type="hidden" name="next" value="{{ next }}"/>
     </form>
   </div>
+  </body>
 {% endblock %}
