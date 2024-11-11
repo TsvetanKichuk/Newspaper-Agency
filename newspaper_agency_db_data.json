@@ -1,0 +1,154 @@
+[
+{
+    "model": "editorial_office.topic",
+    "pk": 1,
+    "fields": {
+        "name": "Politics"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 2,
+    "fields": {
+        "name": "Crime"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 3,
+    "fields": {
+        "name": "Bussines"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 4,
+    "fields": {
+        "name": "Art"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 5,
+    "fields": {
+        "name": "Trade"
+    }
+},
+{
+    "model": "editorial_office.topic",
+    "pk": 6,
+    "fields": {
+        "name": "Weather"
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$xaxsLvNumafqh6D4oLY10m$rR0K1mOkKQuJXl6dovFiLzvHidVE7tHRjmCmR3nkgs4=",
+        "last_login": "2024-09-10T14:47:09.194Z",
+        "is_superuser": true,
+        "username": "tsvetan",
+        "first_name": "Tsvetan",
+        "last_name": "Kichuk",
+        "email": "test@test.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2024-09-06T17:37:55.143Z",
+        "year_of_experience": 1,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$kg47BFTmcTdxtdYzo37ce8$5ZAR9yMK6RC6e8FMvJojExIWe8RPV63dGSRpnAiJbRI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "JohnD",
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-07T13:29:32.127Z",
+        "year_of_experience": 3,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.redactor",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$870000$4acrVKUjBDSt4Jkz2adHNC$cwQOmXmSNA76J7MOua2aCIL4Y5VcltOCRHwgNO18uig=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "StevenK",
+        "first_name": "Steven",
+        "last_name": "King",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2024-09-10T12:50:57.022Z",
+        "year_of_experience": 50,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 1,
+    "fields": {
+        "title": "\"Unexpected snowfall paralyzes city\"",
+        "content": "Yesterday evening the city was hit by an unexpected snowfall. The snow cover reached 20 centimeters. Due to the icy conditions on the roads, traffic jams for several kilometers formed. Public utilities are working in an intensified mode to clear the streets of snow. Forecasters predict that the snowfall will continue for several more days. City residents are asked to be careful on the roads and, if possible, stay home.Local authorities have urged residents to stay home and avoid unnecessary travel. [Quote from a local official about the severity of the storm and safety measures]. Emergency services are working tirelessly to clear roads and assist stranded motorists.\n\nThe storm has caused numerous power outages, leaving thousands of homes and businesses without power. [Include information about the impact of the power outages on the community].\n\n[Add details about the impact on schools, businesses, and other aspects of daily life].\n\nAs the city digs out from under heavy snow, residents are rallying to help their neighbors. [Include any heartwarming stories of community support].\n\nForecasters predict the storm will begin to weaken by [date], but temperatures are expected to remain well below freezing for the next few days.",
+        "published_date": "2024-09-06",
+        "topic": 6,
+        "publishers": [
+            1
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 2,
+    "fields": {
+        "title": "\"The forest as a medicine for the soul\"",
+        "content": "In today's busy world, more and more people are looking for ways to relax and recharge their batteries. And one of the most effective ways is to connect with nature. Walking in the woods, meditating on the shore of a lake, or simply bird watching help us take a break from everyday worries and find harmony with ourselves.Research shows that time spent in nature reduces stress, improves mood, and increases creativity. Phytoncides released by plants have antibacterial properties and purify the air. Sounds of nature, such as birdsong and the sound of the wind, calm the nervous system and promote deep relaxation.Why is the forest so important to us?\\n\\nStress relief: Walking in the forest helps reduce the level of cortisol, the stress hormone. Inhaling phytoncides released by plants, we calm the nervous system and improve our mood.\\nImproved concentration: Research shows that being in the forest helps improve concentration and cognitive function.\\nSleep well: Walking in the fresh air before bed helps improve the quality of sleep and help you fall asleep faster.\\nConnection with nature: The forest helps us feel part of something bigger, reconnect with nature and find a sense of harmony.\\nCreative inspiration: Many artists, writers and musicians find inspiration in nature. The forest is an endless source of creative ideas.\\nHow does the forest affect our psyche?\\n\\nReduced anxiety: The forest creates a sense of safety and security, which helps reduce anxiety.\\nIncreased self-esteem: Being in nature helps us feel important and valuable.\\nDeveloping mindfulness: The forest invites us to pay attention to our feelings, thoughts and emotions.\\nStrengthening the immune system: Phytoncides released by plants have antibacterial and antiviral properties, which helps strengthen the immune system.\\nHow to strengthen your connection with nature?\\n\\nSpend more time outdoors: Walk in the forest, park, or just down the street.\\nPay attention to details: Watch birds, insects, plants.\\nMeditate in nature: Find a quiet place and simply enjoy the sounds and scents of the forest.\\nEngage in environmental projects: Take part in forest cleanups, tree planting, or other environmental initiatives.\\nConclusion\\n\\nThe forest is not just a collection of trees and plants. It is a place where we can find healing for the body and soul. Walking in the forest helps us restore strength, improve our mood, and find harmony with ourselves and the world around us. Let's take care of nature and spend more time in the forest!\\n\\nKeywords: forest, nature, health, psyche, stress, healing, mindfulness\",\n",
+        "published_date": "2024-09-07",
+        "topic": 4,
+        "publishers": [
+            2
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 3,
+    "fields": {
+        "title": "\"The Influence of Nature on the Love of Life\"",
+        "content": "Research shows that time spent in nature reduces stress, improves mood, and increases creativity. Nature as a source of inspiration and healing\n\nMan, inextricably linked with nature, has drawn inspiration, strength and comfort from it throughout history. It is difficult to overestimate the influence of nature on our lives, especially when it comes to such a fundamental feeling as love for life.\n\nWhy is nature so important to us?\n\nEmotional well-being: Walking in the fresh air, contemplating natural beauty helps reduce stress levels, improve mood and increase self-esteem. Contact with nature helps us feel part of something bigger, which in turn gives meaning to life.\nPhysical health: Time spent in nature helps strengthen the immune system, improves sleep and physical fitness. Research shows that people living in ecologically clean areas are less likely to suffer from depression and other mental disorders.\nSpiritual development: Nature has always been a source of inspiration for philosophers, poets and artists. Contemplating natural phenomena helps us reflect on eternal questions, find inner harmony and achieve spiritual balance. How does nature affect love for life?\n\nRestores strength: Nature has a unique ability to restore our strength after difficult trials. A walk in the forest or meditation on the seashore helps us to let go of negative emotions and recharge our batteries.\nGives hope: Even in the most difficult moments of life, nature reminds us of the beauty and fragility of existence. Observing the cycles of nature, we understand that everything in the world is subject to change, and that after winter always comes spring.\nTeaches us gratitude: Nature gives us everything we need for life: air, water, food. Understanding this interconnectedness helps us become more grateful and appreciate every moment.\nHow to strengthen your connection with nature?\n\nSpend more time outdoors: Walk in the park, go out into nature, do gardening.\nPay attention to details: Watch birds, insects, plants.\nMeditate in nature: Find a quiet place and simply enjoy the sounds and scents of nature.\nEngage in environmental projects: Participate in forest cleanups, tree planting, or other environmental initiatives.\nConclusion\n\nThe connection between man and nature is not just a tribute to fashion, but a deep need of our soul. Nature is a source of inspiration, healing, and strength. The more time we spend in nature, the stronger our love for life and ourselves.",
+        "published_date": "2024-09-07",
+        "topic": 4,
+        "publishers": [
+            1,
+            2
+        ]
+    }
+},
+{
+    "model": "editorial_office.newspaper",
+    "pk": 4,
+    "fields": {
+        "title": "\"A Billion Dollar Aroma: The Big Business of a Small Cup\"",
+        "content": "The Rise of Specialty Coffee: A Brew of Innovation\r\nIn recent years, the coffee industry has undergone a remarkable transformation, with the emergence of a new wave of specialty coffee shops. These establishments, often referred to as \"third wave coffee shops,\" are revolutionizing the way we perceive and consume coffee.\r\n\r\nWhat is Specialty Coffee?\r\n\r\nSpecialty coffee is a term used to describe high-quality coffee beans that are sourced from specific regions, roasted to perfection, and brewed with meticulous attention to detail. Unlike mass-produced coffee, specialty coffee prioritizes flavor, aroma, and the unique characteristics of each bean.\r\n\r\nKey Characteristics of Specialty Coffee Shops:\r\n\r\nFocus on Quality: Specialty coffee shops prioritize the sourcing of high-quality coffee beans from sustainable farms.\r\nExpert Baristas: These shops employ skilled baristas who are passionate about coffee and trained in various brewing methods.\r\nSingle-Origin Beans: Many specialty coffee shops offer a variety of single-origin beans, allowing customers to experience the unique flavors of coffee from different regions.\r\nAlternative Brewing Methods: Beyond the traditional drip coffee, specialty coffee shops often offer alternative brewing methods such as pour-over, French press, and Chemex.\r\nEmphasis on Flavor: Specialty coffee shops educate customers about the nuances of flavor profiles and encourage them to appreciate the complexity of coffee.\r\nThe Impact of Specialty Coffee:\r\n\r\nIncreased Consumer Awareness: Specialty coffee shops have played a significant role in educating consumers about the quality and diversity of coffee.\r\nEconomic Growth: The rise of specialty coffee has created new business opportunities and contributed to economic growth in many regions.\r\nCultural Shift: Specialty coffee has become a cultural phenomenon, attracting a growing number of coffee enthusiasts and connoisseurs.\r\n",
+        "published_date": "2024-09-10",
+        "topic": 5,
+        "publishers": [
+            2
+        ]
+    }
+}
+]
