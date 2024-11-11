@@ -27,7 +27,7 @@ class RedactorAdmin(UserAdmin):
 
 
 @admin.register(Newspaper)
-class CarAdmin(admin.ModelAdmin):
+class NewspaperAdmin(admin.ModelAdmin):
     search_fields = ("title",)
     list_filter = ("topic",)
 
