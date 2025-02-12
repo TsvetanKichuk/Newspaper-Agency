@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block content %}
+  <head>
+    <title></title>
+    <style>
+        body {
+            width: 300px;
+            margin: auto;
+            background-image: url("../../static/dist/assets/img/bg-signup.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: #2c3034;
+            border-radius: 25px;
+        }
+    </style>
+  </head>
+  <body>
+      <h1>{{ object|yesno:"Update,Create" }} redactor</h1>
+      <form action="" method="post" novalidate>
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Submit" class="btn btn-dark">
+      </form>
+  </body>
+{% endblock %}

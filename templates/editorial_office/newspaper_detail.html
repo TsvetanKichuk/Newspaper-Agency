@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+    <title>Newspaper Agency</title>
+    <link rel="icon" type="image/x-icon" href="../../static/dist/assets/favicon.ico"/>
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet"/>
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet"/>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../static/dist/css/styles.css" rel="stylesheet"/>
+  </head>
+  <body id="page-top">
+  <!-- Navigation-->
+      
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#page-top">Start</a>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" style="font-size: 19px" href="{% url 'editorial_office:index' %}">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
+                                  href="{% url 'editorial_office:redactor-list' %}">Publishers</a></li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
+                                  href="{% url 'editorial_office:newspaper-list' %}">Newspapers</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" style="font-size: 21px"
+                                  href="{% url 'editorial_office:topic-list' %}">Topics</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Masthead-->
+  <header class="masthead">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+      <div class="d-flex justify-content-center">
+        <div class="text-center">
+          <h2 class="mx-auto my-0 text-uppercase">Newspaper: {{ newspaper.title }}</h2>
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            {% for publisher in newspaper.publishers.all %}
+              <li><strong>Topic:</strong> {{ newspaper.topic }}</li>
+              <li><strong>Date of publication:</strong> {{ newspaper.published_date }}</li>
+              <li><strong>Publisher: </strong><a
+                  href="{% url "editorial_office:redactor-detail" pk=publisher.id %} ">{{ publisher.username }}
+                ({{ publisher.first_name }} {{ publisher.last_name }})</a></li>
+            {% endfor %}
+          </h2>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- About-->
+  <section class="about-section text-center" id="about">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+            <p style="font-size: 21px">{{ newspaper.content }}</p>
+          </h2>
+          <a href="{% url 'editorial_office:newspaper-detail' pk=newspaper.id %}" class="btn btn-danger">
+            Delete
+          </a>
+          <a href="{% url 'editorial_office:newspaper-update' pk=newspaper.id %}" class="btn btn-primary">
+            Update
+          </a>
+        </div>
+      </div>
+    </div>
+    <h6>
+      {% if newspaper in user.newspapers.all %}
+        <a href="{% url 'editorial_office:toggle-newspaper-assign' pk=newspaper.id %}"
+           class="btn btn-danger">
+          Delete me from this newspaper
+        </a>
+      {% else %}
+        <a href="{% url 'editorial_office:toggle-newspaper-assign' pk=newspaper.id %}"
+           class="btn btn-primary">
+          Assign me from this newspaper
+        </a>
+      {% endif %}
+    </h6>
+    <hr>
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container px-4 px-lg-5">Newspaper agency 2024</div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../../static/dist/js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+  </html>
+{% endblock %}
